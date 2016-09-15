@@ -1,6 +1,6 @@
 package_list <- c('jpeg', 'ggplot2', 'gridExtra', 'reshape2')
 for(p in package_list) {
-    if(!(p %in% rownames(installed.packages()))) install.packages(p, repos='http://cran.rstudio.com', lib='/usr/local/lib/R/site-library/', dependencies=TRUE)
+    if(!(p %in% rownames(installed.packages()))) install.packages(p, repos='http://cran.rstudio.com') #, lib='/usr/local/lib/R/site-library/', dependencies=TRUE)
     library(p, character.only = TRUE)
 }
 
@@ -44,7 +44,7 @@ abysm <- sapply(files, function(file) {
     file <- sub(".JPG", "", file)
     file <- sub(".JPEG", "", file)
 
-    f <- "linearX_randomY"
+    f <- "pixel_sort_sd"
     img <- apply_filter(f, raw_img)
     destfile <- gsub(paste0(path,"/"), paste0(path, "/treated/"), file)
     destfile <- paste0(destfile, "-", f, "2.jpg")

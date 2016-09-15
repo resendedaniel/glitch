@@ -61,7 +61,7 @@ noise_on_standard_deviation <- function(img, threshold=.925) {
          sd=sd)
 }
 
-pixel_sort_color <- function(img, color="green") {
+pixel_sort_color <- function(img, color="blue") {
     base <- img[[color]]
     other <- img[!names(img) %in% color]
     n <- dim(base)[2]
